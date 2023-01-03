@@ -1,0 +1,27 @@
+h1 {
+    color: blue;
+    padding: 5px;
+    margin: 5px;
+    border: 1px black solid;
+}
+
+/* # - для id */
+#hello {
+    color: rgb(55, 255, 0);
+    padding: 5px;
+    margin: 5px;
+    border: 2px black dotted;
+}
+
+/* . - для class */
+.par1 {
+    background-color: rgb(233, 217, 196);
+}
+.par2 {
+    background-color: rgb(168, 144, 114);
+}
+
+img {
+    width: 500px;
+    /* height: 100px; */
+}
