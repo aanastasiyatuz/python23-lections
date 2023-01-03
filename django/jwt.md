@@ -24,7 +24,7 @@ REST_FRAMEWORK = {
 > в `INSTALLED_APPS` добавьте `'rest_framework_simplejwt'`
 
 > чтобы создать urls достаточно в `urls.py` добавить
-```
+```py
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -37,7 +37,7 @@ urlpatterns = [
 ```
 
 > чтобы указать срок истечения для токенов, укажите в `settings.py`:
-```
+```py
 from datetime import timedelta
 
 SIMPLE_JWT = {

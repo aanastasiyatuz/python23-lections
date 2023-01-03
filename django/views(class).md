@@ -14,7 +14,7 @@
 > если это не методы (`create` и `list`), то они так же принимают **pk** (например id))
 
 > Например
-```
+```py
 from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
@@ -41,7 +41,7 @@ class ProductViewSet(ViewSet):
 * `methods` - список с методами, которые обрабатывает эта функция
 
 > Например
-```
+```py
 from django.shortcuts import get_object_or_404
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
@@ -85,7 +85,7 @@ class ProductViewSet(ViewSet):
 > так же если вашему сериализатору нужно передать данные со view помимо обьектов для сериализации, то можно переопределить метод `get_serializer_context`
 
 > Например
-```
+```py
     def get_serializer_context(self):
         context = super().get_serializer_context()
         context["hello"] = "world"
@@ -95,7 +95,7 @@ class ProductViewSet(ViewSet):
 > так же если вы хотите поставить permissions не на все ваши функции (views) в этом viewset, то можете переопределить метод `get_permissions`
 
 > Например
-```
+```py
     def get_permissions(self):
         if self.action == 'create':
             return [IsAuthenticated()]

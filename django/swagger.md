@@ -4,7 +4,7 @@
 > в `INSTALLED_APPS` добавьте `'drf_yasg'`
 
 > если используете `jwt`, то добавьте в `settings.py`
-```
+```py
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'Bearer': {
@@ -17,7 +17,7 @@ SWAGGER_SETTINGS = {
 ```
 
 > в главных `urls.py` проекта создайте view для swagger
-```
+```py
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
@@ -33,7 +33,7 @@ schema_view = get_schema_view(
 
 > подключите view в `urlpatterns`
 
-```
+```py
 urlpatterns = [
     ...
     path('docs/', schema_view.with_ui("swagger")),
@@ -45,7 +45,7 @@ urlpatterns = [
 > если вам нужно дополнить документацию для ваших view можете декорировать их
 
 > Например **не отображается параметр для поиска**
-```
+```py
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
@@ -64,7 +64,7 @@ class ProductViewSet(ModelViewSet):
 ```
 
 > Например если **не отображаются поля при POST запросе** (используйте сериализатор)
-```
+```py
 from drf_yasg.utils import swagger_auto_schema
 
 class RegistrationView(APIView):

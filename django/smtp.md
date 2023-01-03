@@ -1,7 +1,7 @@
 # Отправка сообщений по почте
 
 > в `settings.py` добавьте
-```
+```py
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' 
 EMAIL_HOST = 'smtp.gmail.com'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER = config('EMAIL_HOST_USER')
