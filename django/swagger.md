@@ -1,10 +1,10 @@
-"==============================Swagger=============================="
-# установите drf-yasg
+# Swagger
+> установите `drf-yasg`
 
-# в INSTALLED_APPS добавьте 'drf_yasg'
+> в `INSTALLED_APPS` добавьте `'drf_yasg'`
 
-# если используете jwt, то добавьте в settings.py
-"""
+> если используете `jwt`, то добавьте в `settings.py`
+```
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'Bearer': {
@@ -14,38 +14,38 @@ SWAGGER_SETTINGS = {
         }
     }
 }
-"""
+```
 
-# в главных urls проекта создайте view для swagger
-"""
+> в главных `urls.py` проекта создайте view для swagger
+```
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Python 21 API",
+        title="Python 23 API",
         description="makers bootcamp",
         default_version="v1",
     ),
     public=True
 )
-"""
+```
 
-# подключите view в urlpatterns
+> подключите view в `urlpatterns`
 
-"""
+```
 urlpatterns = [
     ...
     path('docs/', schema_view.with_ui("swagger")),
     ...
 ]
-"""
+```
 
 
-# если вам нужно дополнить документацию для ваших view можете декорировать их
+> если вам нужно дополнить документацию для ваших view можете декорировать их
 
-# Например не отображается параметр для поиска
-"""
+> Например **не отображается параметр для поиска**
+```
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
@@ -61,10 +61,10 @@ class ProductViewSet(ModelViewSet):
         
         serializer = ProductSerializer(queryset, many=True, context={"request":request})
         return Response(serializer.data, 200)
-"""
+```
 
-# Например если не отображаются поля при POST запросе (используйте сериализатор)
-"""
+> Например если **не отображаются поля при POST запросе** (используйте сериализатор)
+```
 from drf_yasg.utils import swagger_auto_schema
 
 class RegistrationView(APIView):
@@ -75,4 +75,4 @@ class RegistrationView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response("Вы успешно зарегистрировались!")
-"""
+```
