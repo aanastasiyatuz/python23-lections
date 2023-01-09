@@ -16,7 +16,7 @@ sudo nano /etc/supervisor/conf.d/config.conf
 
 ```
 [program:celery]
-command=/home/test/project/venv/bin/celery worker -A config --loglevel=INFO
+command=/home/test/project/venv/bin/celery -A config worker --loglevel=INFO
 directory=/home/test/project/
 user=www-data
 autostart=true
