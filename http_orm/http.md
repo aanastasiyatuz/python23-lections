@@ -21,8 +21,13 @@
 * **5XX** - ошибки со стороны сервера (back-end)
 
 > URL - uniform resource locator (`https://www.google.com/search?q=hello`)
+
 > DOMAIN - уникальное название (`www.google.com`)
+
 > URI - кусочек URL (`/search`)
+
 > Query parameters - пары (ключ-значение) после ? (`q=hello`)
+
 > HOST - адрес на который мы отправляем запрос (ip address / domain)
+
 > PORT - номер сервиса в сервере (`http-server:80`, `posgresql:5432`, `backend:8000`, `frontend:3000`)
